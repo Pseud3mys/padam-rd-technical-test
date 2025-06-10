@@ -1,0 +1,24 @@
+from graph import Graph
+
+
+def example_solution(graph: Graph) -> list:
+    """Implement a naive solution to find a path in the graph which travels all edges."""
+    uncovered_edges = set(graph.edges)
+    current_vertex = 0  # Pick a starting vertex
+    path = []
+
+    while uncovered_edges:
+        next_vertex=None
+        for edge in uncovered_edges:
+            if current_vertex in edge[:2]:
+                next_vertex = edge[1] if edge[0] == current_vertex else edge[0]
+                
+        if next_vertex:
+            path.append(edge)
+            uncovered_edges.remove(edge)
+            current_vertex = next_vertex
+        else:
+            print("Problem detected")
+            break
+    
+    return path
