@@ -9,7 +9,7 @@ def example_solution(graph: Graph) -> list:
 
     while uncovered_edges:
         # Find an edge not yet covered and incident to the current vertex
-        next_vertex=None
+        next_vertex = None
         for edge in uncovered_edges:
             if current_vertex in edge[:2]:
                 next_vertex = edge[1] if edge[0] == current_vertex else edge[0]
