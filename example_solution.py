@@ -20,7 +20,7 @@ def example_solution(graph: Graph) -> list:
             uncovered_edges.remove(edge)
             current_vertex = next_vertex
         else:
-            print("Problem detected")
+            print("Problem detected: need to exit to avoid infinite loop.")
             break
     
     return path
