@@ -28,6 +28,8 @@ A few graph instances are available in a folder named `instances`.
 - You can then run `python main.py -h` to see usage.
 
 ## Advices
+- We have provided a very basic and incomplete example solution
+    - Feel free to correct/improve it or start a new solution from scratch. Initiatives are valued !
 - Do not spend more than 3 hours on this test.
 - Do not hesitate to submit a partial rendering, flagging with `# TODO` items you didn't have time to complete.
 
