@@ -16,6 +16,7 @@ def main():
 
     if plot_graph:
         graph.plot()
+        graph.display_path(path=path)
 
 
 if __name__ == "__main__":
