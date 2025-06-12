@@ -14,13 +14,21 @@ def example_solution(graph: Graph) -> list:
             if current_vertex in edge[:2]:
                 next_vertex = edge[1] if edge[0] == current_vertex else edge[0]
                 break
-                
+
         if next_vertex:
-            path.append(edge)
+            path.append(
+                (
+                    current_vertex,
+                    next_vertex,
+                    edge[2],
+                    graph.vertices[current_vertex],
+                    graph.vertices[next_vertex],
+                )
+            )
             uncovered_edges.remove(edge)
             current_vertex = next_vertex
         else:
             print("Problem detected: need to exit to avoid infinite loop.")
             break
-    
+
     return path
