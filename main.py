@@ -6,6 +6,7 @@ from utils import *
 
 """ ---------------------------
 Tout le code utile est dans utils.py et j'ai rajouter qlq fonction à graph.py
+Et le code ne se run plus via le terminal mais via un main.py
 --------------------------- """
 
 def main():
