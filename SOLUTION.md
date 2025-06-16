@@ -10,3 +10,10 @@ Ca permet de résoudre des graph qui n'ont pas de chemin eulerien (ie. qui ont u
 C'est un problème connu avec une solution optimal en O(n^3). c'est juste ca ??
 
 Sinon on pourrait implémenter un algorithme genetique.. On n'aurait pas la solution optimal mais ca pourrait être un bon entre-deux avec une complexité inférieur à O(n^3).
+
+DUCOUP... le principe de l'algo c'est de rendre le graph Eulerien enfaite.. et après (pendant) on applique l'algorithme de Floyd-Warshall.
+
+En gros: 
+"hard to choose" est un graph eulerien
+"islands" est un graph avec ques des sommet de degré impaire
+et la map de paris est le cas difficile (bcp de sommets)

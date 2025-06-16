@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import matplotlib.pyplot as plt
 from matplotlib.collections import LineCollection
+import numpy as np
 
 Coordinates = tuple[float, float]
 Edge = tuple[int, int, int, Coordinates, Coordinates]
@@ -25,6 +26,8 @@ class Graph:
         """
         self.vertices = vertices
         self.edges = edges
+        self.adjacency_matrix = self._creer_matrice()
+        self.adjacency_list = self._creer_liste_adjacence()
 
     def plot(self):
         """
@@ -48,6 +51,26 @@ class Graph:
         ax.legend()
         plt.title(f"#E={len(self.edges)}, #V={len(self.vertices)}")
         plt.show()
+
+    def _creer_matrice(self):
+        """Crée la matrice d'adjacence à partir des arêtes."""
+        n = len(self.vertices)
+        matrix = [[0] * n for _ in range(n)]
+        for edge in self.edges:
+            i, j, weight = edge[0], edge[1], edge[2]
+            matrix[i][j] = weight
+            matrix[j][i] = weight
+        return np.array(matrix)
+
+    def _creer_liste_adjacence(self):
+        """Crée une liste d'adjacence à partir des arêtes."""
+        n = len(self.vertices)
+        adj_list = {i: [] for i in range(n)}
+        for i, edge in enumerate(self.edges):
+            u, v, weight, _, _ = edge
+            adj_list[u].append((v, weight, i))
+            adj_list[v].append((u, weight, i))
+        return adj_list
 
     @classmethod
     def display_path(cls, *, path: list[Edge]):
