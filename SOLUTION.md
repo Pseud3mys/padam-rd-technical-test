@@ -17,3 +17,26 @@ En gros:
 "hard to choose" est un graph eulerien
 "islands" est un graph avec ques des sommet de degré impaire
 et la map de paris est le cas difficile (bcp de sommets)
+
+
+Floyd-Warshall c'est l'evolution de Dijkstra. Il calcul le plus court chemin entre tous les sommets d'un graph orienté. Alors que Dijkstra ne le fait que pour un sommet de départ.
+
+----
+J'ai fait une première implémentation pour le postier chinois. D'après Wikipedia:
+
+"Dans le cas général, il y a toujours un nombre pair de sommets de degré impair. La solution optimale peut être obtenue par l'algorithme suivant[2] :
+
+- Former un nouveau graphe G’, constitué uniquement des sommets de degré impair dans le graphe initial G.
+- Entre deux sommets de G’, ajouter une arête dont la longueur est celle du plus court chemin entre les deux sommets dans G.
+- Trouver un couplage parfait de poids minimum dans G’, ce qu'on peut calculer avec un algorithme de complexité O(n3).
+- Pour chaque paire de sommets u et v couplés dans G’, ajouter au graphe initial G les arêtes du plus court chemin de u à v.
+"
+
+L'idée c'est que le cas des sommets paires est simple à régler... On veut savoir comment combiner les sommets impaires. (graphe non Eulerien).
+Le jeu est simple, on applique Floyd-Warshall pour tous les sommets impaires. Ensuite vient le problème de couplage entre les sommets impaires.
+
+C'est cette partie là qui est difficile. Ma première implementation etait de faire de la force brute avec chaque paire de sommets... Mais c'est m^me pas la peine d'y penser pour la carte de Paris par exemple.
+
+J'ai implémenter Floyd-Warshall mais sur Paris ca tourne pas bien. il faudrait couper le problème en petit sous problème (=sous graph) avec des eurisitque, genre des quartier et tt ca).
+
+A ce moment ca fait environ 1h15 que je suis dessus... Va falloir choisir une implémentation.

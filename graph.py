@@ -26,7 +26,7 @@ class Graph:
         """
         self.vertices = vertices
         self.edges = edges
-        self.adjacency_matrix = self._creer_matrice()
+        self.adjacency_matrix = self._creer_matrice_adjacence()
         self.adjacency_list = self._creer_liste_adjacence()
 
     def plot(self):
@@ -52,10 +52,10 @@ class Graph:
         plt.title(f"#E={len(self.edges)}, #V={len(self.vertices)}")
         plt.show()
 
-    def _creer_matrice(self):
+    def _creer_matrice_adjacence(self, ):
         """Crée la matrice d'adjacence à partir des arêtes."""
         n = len(self.vertices)
-        matrix = [[0] * n for _ in range(n)]
+        matrix = [[np.inf] * n for _ in range(n)]  # initialisation avec infini.
         for edge in self.edges:
             i, j, weight = edge[0], edge[1], edge[2]
             matrix[i][j] = weight
