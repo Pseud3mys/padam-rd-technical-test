@@ -4,7 +4,9 @@ from example_solution import example_solution
 
 
 def main():
-    in_file, plot_graph = parse_cmd_line()
+    #in_file, plot_graph = parse_cmd_line()
+    plot_graph = True
+    in_file = "instances/hard_to_choose.txt"  # Default input file, can be changed as needed
     vertices, edges = parse_file(in_file)
     print(f"#E={len(edges)}, #V={len(vertices)}")
     graph = Graph(vertices, edges)
