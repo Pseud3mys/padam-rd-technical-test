@@ -90,3 +90,22 @@ class Graph:
                     arrowprops=dict(arrowstyle="->", color=colors(path_index)),
                 )
         plt.show()
+
+    def plot_vertexes(
+        self, vertexes: list[int], color: str = "red", size: int = 1
+    ):
+        """Plot the vertices of the graph."""
+        x = [self.vertices[v][0] for v in vertexes]
+        y = [self.vertices[v][1] for v in vertexes]
+        plt.scatter(x, y, c=color, s=size)
+        #plt.show()
+
+    def plot_edges(
+        self, edges: list[int], color: str = "blue", size: int = 1
+    ):
+        """Plot the edges of the graph. with there idexes"""
+        for edge in edges:
+            x = [self.vertices[edge[0]][0], self.vertices[edge[1]][0]]
+            y = [self.vertices[edge[0]][1], self.vertices[edge[1]][1]]
+            plt.plot(x, y, c=color, linewidth=size)
+        #plt.show()
