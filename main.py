@@ -4,6 +4,9 @@ from example_solution import example_solution
 from postierChinois import test
 from utils import *
 
+""" ---------------------------
+Tout le code utile est dans utils.py et j'ai rajouter qlq fonction à graph.py
+--------------------------- """
 
 def main():
     #in_file, plot_graph = parse_cmd_line()
